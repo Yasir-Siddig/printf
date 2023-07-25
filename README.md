@@ -1,6 +1,6 @@
-this is printf project  
+Non empty readme file for printf project  
 made by  
 
-Yasir SIDDIG
+Yasir Siddig
 
-Smah ALI
+Smah Ali
