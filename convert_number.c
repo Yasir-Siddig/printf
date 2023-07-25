@@ -19,6 +19,7 @@ int print_hex(va_list ap, params_t *params)
 		l = (unsigned short int)va_arg(ap, unsigned int);
 	else
 		l = (unsigned int)va_arg(ap, unsigned int);
+
 	str = convert(l, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
 	if (params->hashtag_flag && l)
 	{
@@ -28,6 +29,7 @@ int print_hex(va_list ap, params_t *params)
 	params->unsign = 1;
 	return (c += print_number(str, params));
 }
+
 /**
  * print_HEX - prints unsigned hex numbers in uppercase
  * @ap: the argument pointer
@@ -47,6 +49,7 @@ int print_HEX(va_list ap, params_t *params)
 		l = (unsigned short int)va_arg(ap, unsigned int);
 	else
 		l = (unsigned int)va_arg(ap, unsigned int);
+
 	str = convert(l, 16, CONVERT_UNSIGNED, params);
 	if (params->hashtag_flag && l)
 	{
@@ -74,6 +77,7 @@ int print_binary(va_list ap, params_t *params)
 	params->unsign = 1;
 	return (c += print_number(str, params));
 }
+
 /**
  * print_octal - prints unsigned octal numbers
  * @ap: the argument pointer
@@ -94,6 +98,7 @@ int print_octal(va_list ap, params_t *params)
 	else
 		l = (unsigned int)va_arg(ap, unsigned int);
 	str = convert(l, 8, CONVERT_UNSIGNED, params);
+
 	if (params->hashtag_flag && l)
 		*--str = '0';
 	params->unsign = 1;

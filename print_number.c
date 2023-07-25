@@ -10,6 +10,7 @@ int _isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
+
 /**
  * _strlen - returns the length of a string
  * @s: the string whose length to check
@@ -24,6 +25,7 @@ int _strlen(char *s)
 		i++;
 	return (i);
 }
+
 /**
  * print_number - prints a number with options
  * @str: the base number as a string
@@ -48,11 +50,13 @@ int print_number(char *str, params_t *params)
 			*--str = '0';
 	if (neg)
 		*--str = '-';
+
 	if (!params->minus_flag)
 		return (print_number_right_shift(str, params));
 	else
 		return (print_number_left_shift(str, params));
 }
+
 /**
  * print_number_right_shift - prints a number with options
  * @str: the base number as a string
@@ -94,6 +98,7 @@ int print_number_right_shift(char *str, params_t *params)
 	n += _puts(str);
 	return (n);
 }
+
 /**
  * print_number_left_shift - prints a number with options
  * @str: the base number as a string
@@ -113,6 +118,7 @@ int print_number_left_shift(char *str, params_t *params)
 		str++;
 	else
 		neg = 0;
+
 	if (params->plus_flag && !neg2 && !params->unsign)
 		n += _putchar('+'), i++;
 	else if (params->space_flag && !neg2 && !params->unsign)

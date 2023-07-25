@@ -9,8 +9,12 @@
 
 #define OUTPUT_BUF_SIZE 1024
 #define BUF_FLUSH -1
-#define NULL_STRING"(null)"
+
+
+#define NULL_STRING "(null)"
+
 #define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+
 #define CONVERT_LOWERCASE	1
 #define CONVERT_UNSIGNED	2
 
@@ -34,14 +38,17 @@
  */
 typedef struct parameters
 {
-	unsigned int unsign		: 1;
+	unsigned int unsign			: 1;
+
 	unsigned int plus_flag		: 1;
 	unsigned int space_flag		: 1;
 	unsigned int hashtag_flag	: 1;
 	unsigned int zero_flag		: 1;
 	unsigned int minus_flag		: 1;
+
 	unsigned int width;
 	unsigned int precision;
+
 	unsigned int h_modifier		: 1;
 	unsigned int l_modifier		: 1;
 } params_t;
@@ -107,4 +114,6 @@ char *get_precision(char *p, params_t *params, va_list ap);
 
 /* _prinf.c module */
 int _printf(const char *format, ...);
+
 #endif
+
